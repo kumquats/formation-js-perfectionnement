@@ -13,5 +13,5 @@ L'objectif de ce TP est de pratiquer la POO en utilisant la nouvelle syntaxe ES6
 ## Instructions
 
 - Reprendre le microframework créé dans l'exercice précédent et transformer le code afin de respecter la syntaxe ES6
-- Utiliser la commande Babel afin de transformer le code ES6 en code ES5 compatible avec tous les navigateurs (.\node_modules\.bin\babel js -d build) (js = dossier source / build = dossier destination)
+- Utiliser la commande Babel afin de transformer le code ES6 en code ES5 compatible avec tous les navigateurs (.\node_modules\\.bin\babel js -d build) (js = dossier source / build = dossier destination)
 
