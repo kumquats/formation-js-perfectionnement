@@ -21,7 +21,7 @@ node server.js
 
 ## Instructions
 - dans client.js connecter l'utilisateur au serveur. Un message doit apparaitre dans le terminal :
-    Nouveau joueur connecté : <id-de-la-socket> (<nb> connectés)
+    Nouveau joueur connecté : \<id-de-la-socket\> (\<nb\> connectés)
 - placer aléatoirement le joueur
 - affecter une couleur de fond aléatoire au joueur
 - envoyer au joueur qui vient de se connecter la liste de tous les joueurs et leurs positions
