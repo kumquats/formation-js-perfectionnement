@@ -1,4 +1,4 @@
-# TP Rappels - installation environnement de développement
+# TP environnement de debogage
 
 ## Objectifs
 Manipuler quelques outils de debug des chrome dev tools et découvrir divers outils en ligne.
@@ -8,6 +8,6 @@ Manipuler quelques outils de debug des chrome dev tools et découvrir divers out
 
 ## Instructions
 - coder au moins deux façons de parcourir le tableau "data" et déterminer la façon la plus rapide à l'aide des méthodes de l'objet console.
-- se créer un compte sur codepen.io et suivre Kumquats ;)
+- se créer un compte sur codepen.io et suivre Kumquats http://codepen.io/kumquats ;)
 - créer un premier pen avec le code précédent et voir le résultat dans la console
 - se créer un compte sur https://www.browserstack.com/ et tester le site de sa société sur différents couples navigateurs/OS
