@@ -1,4 +1,4 @@
-# TP Échange de données - NodeJS
+# TP Rappels - API DOM
 
 ## Objectifs
 L'objectif de ce TP est de manipuler le DOM grâce aux méthodes fournies par le moteur JavaScript du navigateur. Ce TP vous permettra de créer un diaporama en modifiant le code html de la page uniquement en JavaScript.
