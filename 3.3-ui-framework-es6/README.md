@@ -11,7 +11,7 @@ L'objectif de ce TP est de créer un framework UI permettant de créer des compo
 - Récupérer les fichiers de démarrage (archive fournie)
 
 ## Instructions
-
+*NB : pour lancer la compilation, utiliser la commande suivante : .\node_modules\\.bin\babel js -d build --watch --source-maps*
 - Créer une classe "Component" qui représentera un composant graphique générique
     + Le constructeur de la classe **Component** doit prendre 3 paramètres:
         * **tagName** (string): Le nom du tag HTML
@@ -33,3 +33,13 @@ L'objectif de ce TP est de créer un framework UI permettant de créer des compo
         * **text** : Texte à afficher dans le bouton
         * **attributes** : Attributs du bouton
     + Par défaut cette classe doit afficher un 'button' HTML contenant le texte et les attributs définis dans le constructeur **ET** possédant des coins arrondis, une couleur de texte blanche et une couleur de fond rouge
+
+## Pour aller plus loin
+- organiser le code en modules ES6, créer un module par classe en utilisant [webpack](http://webpack.github.io/)) :
+    + installer webpack : npm install --save-dev webpack
+    + créer un fichier webpack.config.js à la racine du tp (au même niveau que le dossier "node_modules") en suivant les instructions de http://webpack.github.io/docs/usage.html#transpiling-es2015-using-babel-loader
+    + répartir le code de chaque classe dans des fichiers distincts, et utiliser les instructions import / export
+    + déplacer le code contenu dans la page html vers le fichier ui-framework.js et placer la balise script en bas du body
+    + compiler à l'aide de la commande .\node_modules\\.bin\webpack --watch (et plus "babel")
+    + ajouter la gestion des source-maps
+    + minifier et obfusquer le code généré
