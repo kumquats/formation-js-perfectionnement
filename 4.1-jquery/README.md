@@ -1,4 +1,4 @@
-# TP Échange de données - NodeJS
+# TP jQuery
 
 ## Objectifs
 L'objectif de ce TP est de manipuler le DOM grâce à jQuery. Pour cela nous allons reprendre notre exemple du TP 1.2 et le re-coder avec jQuery. 
