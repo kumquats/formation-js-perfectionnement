@@ -5,14 +5,14 @@ L'objectif de ce TP est de mettre en place un serveur websocket NodeJS permettan
 
 ## Préparatifs
 - installer NodeJS 
-- installer Node Inspector
-```
-npm install node-inspector --save-dev
-```
 - récupérer les fichiers de démarrage (archive fournie)
 - installer les dépendances de l'application avec la commande
 ```
 npm install
+```
+- installer Node Inspector
+```
+npm install node-inspector --save-dev
 ```
 - lancer le serveur node et s'assurer que le message "Socket.IO server is running on port 1337" s'affiche
 ```bash
