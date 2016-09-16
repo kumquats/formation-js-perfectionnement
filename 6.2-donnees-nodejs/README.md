@@ -16,11 +16,11 @@ npm install node-inspector --save-dev
 ```
 - lancer le serveur node et s'assurer que le message "Socket.IO server is running on port 1337" s'affiche
 ```bash
-.\node_modules\\.bin\\node-debug server.js
+.\node_modules\.bin\node-debug server.js
 ```
 - lancer la compilation ES6>ES5 du fichier client.js
 ```bash
-.\node_modules\\.bin\\babel client.js -d build --source-maps --watch
+.\node_modules\.bin\babel client.js -d build --source-maps --watch
 ```
 
 ## Instructions
