@@ -1,4 +1,4 @@
-# TP environnement de debogage
+# TP 2 - Environnement de debug
 
 ## Objectifs
 Manipuler les outils de debug intégrés dans Chrome (Chrome Dev Tools)et découvrir quelques outils en ligne utiles.
