@@ -1,4 +1,4 @@
-# TP 1 - Premiers pas
+# TP 1 - Rappels
 
 ## Objectifs
 - Mettre en place son environnement de développement
