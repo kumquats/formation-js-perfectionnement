@@ -1,5 +1,5 @@
 // codez ici votre TP
-console.log( 'Welcome to JSTV ! 📺' );
+console.log('Welcome to ', {title:'JSTV', emoji: '📺'});
 
 /**
  * Analyse le contenu d'une balise et retourne un tableau d'URL d'images
