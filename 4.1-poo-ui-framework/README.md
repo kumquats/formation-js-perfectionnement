@@ -116,5 +116,37 @@ A chaque étape du TP vous allez perfectionner la classe Component pour la rendr
 		<button>chercher</button>
 	</form>
 	```
-
+3. **Créez une classe `SearchResults` qui permette d'afficher une liste de résultats de recherche** (pour le moment la liste de résultats sera passée en dur) :
+	```js
+	const searchResults = new SearchResults();
+	searchResults.results = [
+		{ show: { name: 'Game Of thrones', premiered: '2011-04-17', officialSite: 'http://www.hbo.com/game-of-thrones' } },
+		{ show: { name: 'The Walking Dead', premiered: '2010-10-31', officialSite: 'http://www.amc.com/shows/the-walking-dead' } },
+		{ show: { name: 'True Detective', premiered	: '2014-01-12', officialSite: 'http://www.hbo.com/true-detective' } },
+	];
+	const searchResultsContainer = document.querySelector( '.searchResults' );
+	searchResultsContainer.innerHTML = searchResults.render();
+	```
+	Le résultat attendu est :
+	```html
+	<ul>
+        <li>
+            <article class="searchResultRenderer">
+                <h3>Game Of Thrones</h3>
+                <time datetime="2011-04-17">2011-04-17</time>
+                <a href="http://www.hbo.com/game-of-thrones">http://www.hbo.com/game-of-thrones</a>
+            </article>
+            <article class="searchResultRenderer">
+                <h3>The Walking Dead</h3>
+                <time datetime="2010-10-31">2010-10-31</time>
+                <a href="http://www.amc.com/shows/the-walking-dead">http://www.amc.com/shows/the-walking-dead</a>
+            </article>
+            <article class="searchResultRenderer">
+                <h3>True Detective</h3>
+                <time datetime="2014-01-12">2014-01-12</time>
+                <a href="http://www.hbo.com/true-detective">http://www.hbo.com/true-detective</a>
+            </article>
+        </li>
+	</ul>
+	```
 
