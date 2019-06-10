@@ -140,6 +140,7 @@ body > header h1.logo em {
 	/* flex-grow: 1; */
 	width: 60%;
 }
+.liveSearch ul,
 .searchResults ul {
 	list-style-type: none;
 	display: flex;
@@ -148,6 +149,7 @@ body > header h1.logo em {
 	margin: 0;
 	padding: 0;
 }
+.liveSearch ul li,
 .searchResults ul li {
 	margin: 0;
 	padding: 0;
@@ -167,6 +169,7 @@ body > header h1.logo em {
 	display: flex;
 	flex-direction: column;
 	padding-left: 20px;
+	overflow: hidden;
 }
 .searchResultRenderer .infos h3 {
 	margin-top: 0;
@@ -177,7 +180,9 @@ body > header h1.logo em {
 	/* font-style: italic; */
 	opacity: .4;
 }
-
+.searchResultRenderer .infos a {
+	word-break:break-all;
+}
 .searchResults, .sidebar {
 	position: relative;
 	padding: 40px;
@@ -233,6 +238,31 @@ body > header h1.logo em {
 	display: none;
 }
 
+.liveSearch ul:before {
+	content: 'Les recherches live :';
+	font-weight: bold;
+	font-size: 14px;
+	opacity: .8;
+	margin-bottom: 5px;
+	display: block;
+}
+.liveSearch li {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.liveSearch li time {
+	opacity: .5;
+}
+.liveSearchRenderer {
+	font-size: 14px;
+}
+.liveSearchRenderer.isMe:after {
+	content: '(moi)';
+	text-decoration: none;
+	font-size: 11px;
+	opacity: .4;
+}
 
 body > footer {
 	background: hsl(200, 18%, 16%);
