@@ -3,7 +3,6 @@
 ## Sommaire <!-- omit in toc -->
 - [Objectifs](#objectifs)
 - [Préparatifs](#préparatifs)
-	- [*Préparatifs 1. :* Récupérer les fichiers de démarrage](#préparatifs-1--récupérer-les-fichiers-de-démarrage)
 	- [*Préparatifs 2. :* Le fichier `package.json`](#préparatifs-2--le-fichier-packagejson)
 	- [*Préparatifs 3.:* Créer un script de build personnalisé](#préparatifs-3-créer-un-script-de-build-personnalisé)
 - [Instructions](#instructions)
@@ -15,14 +14,14 @@
 - répartir le code de notre application JSTV dans plusieurs modules
 
 ## Préparatifs
-### *Préparatifs 1. :* Récupérer les fichiers de démarrage
-1. Récupérer le contenu du dossier `demarrage` du TP *(vous pouvez également repartir des fichiers de votre tp précédent si vous aviez terminé)*
-2. **Lancer un serveur http dans le dossier demarrage/public** :
+1. **Récupérez le contenu du dossier `demarrage` du TP** *(vous pouvez également repartir des fichiers de votre tp précédent si vous aviez terminé)*
+2. **Lancez un serveur http dans le dossier demarrage/public** :
 	```bash
 	cd /chemin/vers/demarrage/public
 	php -S localhost:80
 	```
-3. Ouvrir http://localhost
+3. **Ouvrez http://localhost**
+
 
 ### *Préparatifs 2. :* Le fichier `package.json`
 
