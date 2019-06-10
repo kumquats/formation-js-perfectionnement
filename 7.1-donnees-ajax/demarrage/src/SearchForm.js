@@ -2,9 +2,13 @@ import Component from "./Component";
 import Button from "./Button";
 
 export default class SearchForm extends Component {
+	// regexp de validation de la saisie de l'utilisateur
+	// propriété statique (de classe)
+	static validationRegExp = /[^\s]{3,}/g;
 	#form;
 	#input;
 	onSubmit;
+
 
 	constructor() {
 		super( 'form', [
@@ -44,6 +48,10 @@ export default class SearchForm extends Component {
 	 */
 	submit() {
 		const searchValue = this.#input.val();
+		if ( !searchValue.match( SearchForm.validationRegExp ) ) {
+			alert( 'vous devez saisir un mot d\'au moins 3 caractères' );
+			return;
+		}
 		if ( this.onSubmit ) {
 			this.onSubmit( searchValue );
 		}

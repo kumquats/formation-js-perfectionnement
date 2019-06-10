@@ -1,4 +1,5 @@
 import Component from "./Component";
+import { formatDate } from "./utils";
 
 class SearchResultRenderer extends Component {
 	result;
@@ -16,7 +17,7 @@ class SearchResultRenderer extends Component {
 				<section class="infos">
 					<h3>${name}</h3>
 					<p>${summary}</p>
-					${ premiered ? `<time datetime="${premiered}">${premiered}</time>` : ''}
+					${ premiered ? `<time datetime="${premiered}">${formatDate(premiered)}</time>` : ''}
 					${ officialSite ? `<a href="${officialSite}">${officialSite}</a>` : ''}
 				</section>
 			</article>
