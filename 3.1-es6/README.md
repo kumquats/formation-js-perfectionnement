@@ -40,7 +40,7 @@ Tapez dans un terminal les instructions suivantes :
 		"presets": ["@babel/preset-env"]
 	}
 	```
-6. **Modifiez l'arborescence du projet :**
+6. **Modifiez l'arborescence du projet (déplacez `main.js` dans un sous-dossier `src`) :**
 	```bash
 	demarrage/
 	  ├─ images/
