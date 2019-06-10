@@ -17,9 +17,9 @@
 ## Préparatifs
 ### *Préparatifs 1. :* Récupérer les fichiers de démarrage
 1. Récupérer le contenu du dossier `demarrage` du TP *(vous pouvez également repartir des fichiers de votre tp précédent si vous aviez terminé)*
-2. **Lancer un serveur http dans le dossier demarrage** :
+2. **Lancer un serveur http dans le dossier demarrage/public** :
 	```bash
-	cd /chemin/vers/demarrage
+	cd /chemin/vers/demarrage/public
 	php -S localhost:80
 	```
 3. Ouvrir http://localhost
@@ -44,11 +44,11 @@ Ce fichier sert à plusieurs choses et notamment :
 Jusque là pour lancer la compilation avec [Babel](https://babeljs.io), nous lancions une des deux commandes suivantes :
 
 ```bash
-./node_modules/.bin/babel src -d build
+./node_modules/.bin/babel src -d public/build
 ```
 ou
 ```bash
-./node_modules/.bin/babel src -d build --verbose --watch --source-maps
+./node_modules/.bin/babel src -d public/build --verbose --watch --source-maps
 ```
 
 Avec le `package.json` on va créer des "raccourcis" pour lancer ces commandes plus facilement.
@@ -71,7 +71,7 @@ Avec le `package.json` on va créer des "raccourcis" pour lancer ces commandes p
 	```json
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "babel src -d build"
+		"build": "babel src -d public/build"
 	},
 	```
 	*Vous noterez que le chemin  `./node_modules/.bin/' n'est plus nécessaire !*
@@ -83,9 +83,9 @@ Avec le `package.json` on va créer des "raccourcis" pour lancer ces commandes p
 	*Si la compilation ne se lance pas, plusieurs raisons possibles : soit Babel n'est pas correctement installé, soit la section "scripts" n'est pas correctement formatée (pensez qu'il s'agit d'un fichier json, par conséquent l'oubli d'une virgule entre chaque script ou au contraire l'ajout d'une virgule à la fin du dernier script, sont considérés comme des erreurs de syntaxe).*
 6. **Ajoutez un nouveau script nommé `"watch"` qui permette de lancer la commande** :
 	```bash
-	./node_modules/.bin/babel js -d build --verbose --watch --source-maps
+	./node_modules/.bin/babel src -d public/build --verbose --watch --source-maps
 	```
-	Lancez la commande `npm run watch` et vérifiez que lorsque vous modifiez le fichier `js/main.js`, le fichier `build/main.js` est bien mis à jour.
+	Lancez la commande `npm run watch` et vérifiez que lorsque vous modifiez le fichier `src/main.js`, le fichier `build/main.js` est bien mis à jour.
 
 ## Instructions
 **Comme vu dans le chapitre précédent, le système de modules ES6 permet de répartir son code dans plusieurs fichiers et de gérer les dépendances de l'application fichier par fichier plutôt que d'avoir à maintenir une liste exhaustive des scripts à charger dans le fichier html.**
@@ -110,7 +110,7 @@ Dans un premier temps nous allons mettre de côté ce problème et nous appuyer 
 
 	Pour prendre en compte la nouvelle configuration de Babel, stoppez (<kbd>CTRL</kbd>+<kbd>C</kbd>) puis relancez la compilation à l'aide de la commande `npm run watch`
 
-3.  **Passez les fonctions `getSlideshowImages`,`renderSlideshow` et `slideNext` dans un module nommé `slideshow.js`**. Rappelez vous, tout ce qui est défini dans un module (variables, fonctions, ...), n'existe qu'à l'intérieur du module sauf s'il est exporté puis importé dans un autre fichier.
+3.  **Passez les fonctions `getSlideshowImages`,`renderSlideshow` et `slideNext` dans un module nommé `slideshow.js`**. `renderSlideshow` sera l'export par défaut. Rappelez vous, tout ce qui est défini dans un module (variables, fonctions, ...), n'existe qu'à l'intérieur du module sauf s'il est exporté puis importé dans un autre fichier.
 
 	*NB1: Pour rappel, exporter par défaut une constante sur la même ligne que sa création est interdit :*
 	```js
@@ -152,10 +152,10 @@ Comme vu dans le chapitre précédent, le bundler le plus employé en JS est [We
 
 	module.exports = {
 		// Fichier d'entrée
-		entry: './js/main.js',
+		entry: './src/main.js',
 		// Fichier de sortie
 		output: {
-			path: path.resolve(__dirname, './build'),
+			path: path.resolve(__dirname, './public/build'),
 			filename: 'main.bundle.js'
 		},
 		module: {
