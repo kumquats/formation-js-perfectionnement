@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import renderSlideshow, { getSlideshowImages, slideNext } from "./slideshow.js";
 import Component from "./Component.js";
 import SearchForm from "./SearchForm.js";
@@ -9,16 +10,16 @@ console.log( 'Welcome to ', { title: 'JSTV', emoji: '📺' } );
 
 
 // on initialise le diaporama
-const slideshowContainer = document.querySelector( '.slideshow' ),
+const slideshowContainer = $( '.slideshow' ),
 	images = getSlideshowImages( slideshowContainer );
 if ( images.length ) {
-	slideshowContainer.innerHTML = renderSlideshow( images );
+	slideshowContainer.html( renderSlideshow( images ) );
 }
 // toutes les 2 secondes on fait défiler le diaporama
 setInterval( () => slideNext( slideshowContainer ), 2000 );
 // on ajoute la classe CSS 'single' au slideshow
 // pour n'afficher que la première image
-slideshowContainer.classList.add( 'single' );
+slideshowContainer.addClass( 'single' );
 
 // création du header
 const c = new Component( 'h1', [
@@ -27,14 +28,20 @@ const c = new Component( 'h1', [
 	],
 	{ class: 'logo' }
 );
-document.querySelector( 'body > header' ).innerHTML = c.render();
+$( 'body > header' ).html( c.render() );
 
 // Formulaire de recherche
 const searchForm = new SearchForm();
-document.querySelector( '.searchForm' ).innerHTML = searchForm.render();
+const searchFormContainer = $( '.searchForm' );
+searchFormContainer.html( searchForm.render() );
+searchForm.mount( searchFormContainer );
+// au submit du formulaire de recherche on exécute la fonction suivante
+searchForm.onSubmit = value => {
+	console.log(`Recherche de la valeur : ${ value }` );
+}
 
 // Page de résultats
 const searchResults = new SearchResults();
 searchResults.results = data;
-const searchResultsContainer = document.querySelector( '.searchResults' );
-searchResultsContainer.innerHTML = searchResults.render();
+const searchResultsContainer = $( '.searchResults' );
+searchResultsContainer.html( searchResults.render() );

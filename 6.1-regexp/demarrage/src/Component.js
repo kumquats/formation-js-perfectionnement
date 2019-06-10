@@ -59,4 +59,13 @@ export default class Component {
 		});
 		return childrenHtml;
 	}
+	/**
+	 la méthode permet de sauvegarder dans le composant
+	 L'élément HTML auquel il est attaché.
+	 Utile pour ajouter des écouteurs d'événements ou accéder au DOM une fois généré.
+	 @param {Element} element Element HTML auquel le component est attaché
+	 */
+	mount( element ){
+		this.element = element;
+	}
 }

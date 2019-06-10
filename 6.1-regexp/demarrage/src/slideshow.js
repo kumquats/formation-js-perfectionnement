@@ -1,7 +1,8 @@
+import $ from 'jquery';
 /**
  * Analyse le contenu d'une balise et retourne un tableau d'URL d'images
  * si cette balise contient des `<span>`.
- * @param {Node} container Element HTML dans lequel rechercher
+ * @param {JQuery} container Objet jQuery dans lequel rechercher
  * @returns Array<string> tableau des URLs d'images
  */
 export function getSlideshowImages( container ) {
@@ -9,10 +10,10 @@ export function getSlideshowImages( container ) {
 	// Array.from permet de convertir la NodeList en tableau
 	// pratique pour bénéficier de plus de méthodes,
 	// notamment la méthode .map()
-	const spans = Array.from( container.querySelectorAll( 'span' ) );
+	const spans = $( 'span', container );
 	// Pour chaque span on récupère son contenu (innerHTML)
 	// et on retourne le tableau des URLs d'images
-	return spans.map( ( { innerHTML: src } ) => src );
+	return spans.map( (index, span) => span.innerHTML ).toArray();
 }
 
 /**
@@ -39,6 +40,6 @@ export default function renderSlideshow( images ) {
  * @param {Node} container Element HTML dans lequel se trouve le slideshow
  */
 export function slideNext( container ) {
-	const firstSlide = container.querySelector( 'a' );
-	container.appendChild( firstSlide );
+	const firstSlide = container.find( 'a' ).get( 0 );
+	container.append( firstSlide );
 }
