@@ -129,9 +129,9 @@ Dans un premier temps nous allons mettre de côté ce problème et nous appuyer 
 	export default function maFonction() {...} // OK !
 	```
 
-4. **Compilez votre code et testez la page dans le navigateur** : le résultat doit être identique à celui obtenu précédemment :<br><a href="images/jstv-05.jpg"><img src="images/jstv-05.jpg" width="80%"></a>
+4. **Compilez votre code et testez la page dans le navigateur** : le résultat doit être identique à celui obtenu précédemment.
 
-5. **Ouvrez l'onglet Réseau/Network des devtools, vous devez normalement voir le chargement automatique des différents modules** (une ligne par fichier JS) :<br><a href="images/jstv-06-modules.jpg"><img src="images/jstv-06-modules.jpg" width="80%"></a>
+5. **Ouvrez l'onglet Réseau/Network des devtools, vous devez normalement voir le chargement automatique des différents modules** (une ligne par fichier JS).
 
 ### 2. Rendre les modules compatibles avec les vieux navigateurs
 
@@ -173,6 +173,6 @@ Comme vu dans le chapitre précédent, le bundler le plus employé en JS est [We
 	"watch": "webpack --mode=development --watch"
 	```
 4. **Lancez la compilation** : stoppez le watch précédent (<kbd>CTRL</kbd>+<kbd>C</kbd>) et relancez la compilation à l'aide de la commande `npm run watch` (*qui lancera cette fois webpack et plus Babel*)
-5. **Enfin, vérifiez dans le navigateur que la page s'affiche toujours** et que dans l'onglet "Réseau"/"Network" vous n'avez maintenant bien plus qu'un seul fichier JS téléchargé par le navigateur : le `build/main.bundle.js`<a href="images/pizzaland-07-modules-webpack.jpg"><img src="images/pizzaland-07-modules-webpack.jpg" width="80%"></a>
+5. **Enfin, vérifiez dans le navigateur que la page s'affiche toujours** et que dans l'onglet "Réseau"/"Network" vous n'avez maintenant bien plus qu'un seul fichier JS téléchargé par le navigateur : le `build/main.bundle.js`
 
 

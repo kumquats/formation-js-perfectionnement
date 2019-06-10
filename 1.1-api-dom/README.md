@@ -29,7 +29,7 @@
 	Press Ctrl-C to quit.
 	...
 	```
-4. **Vérifier dans le navigateur que la page index.html fournie s'affiche correctement** en ouvrant l'url http://localhost. Le résultat attendu est le suivant : <br><a href="images/jstv-00.jpg"><img src="images/jstv-00.jpg" width="80%"></a>
+4. **Vérifier dans le navigateur que la page index.html fournie s'affiche correctement** en ouvrant l'url http://localhost.
 
 	*Si la page ne s'affiche pas correctement, vérifiez que vous avez bien lancé PHP dans le dossier de démarrage, c'est à dire celui où se trouve le fichier `index.html`.*
 5. **Installer un éditeur de code optimisé pour le développement web et particulièrement le JS moderne** : je vous recommande notamment [Visual Studio Code](https://code.visualstudio.com/) (vscode). C'est un éditeur de code opensource et développé avec [Electron](https://electronjs.org/), c'est donc un outil qui est lui-même développé en JS !
