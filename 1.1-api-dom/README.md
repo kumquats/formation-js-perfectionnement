@@ -1,4 +1,11 @@
-# TP 1 - Rappels
+# TP 1 - Rappels <!-- omit in toc -->
+
+## Sommaire <!-- omit in toc -->
+- [Objectifs](#objectifs)
+- [Préparatifs](#préparatifs)
+- [Instructions](#instructions)
+- [Pour aller plus loin](#pour-aller-plus-loin)
+
 
 ## Objectifs
 - Mettre en place son environnement de développement

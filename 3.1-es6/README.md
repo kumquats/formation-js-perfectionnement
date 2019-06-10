@@ -1,4 +1,11 @@
-# TP 3.1 - ES6
+# TP 3.1 - ES6 <!-- omit in toc -->
+
+## Sommaire <!-- omit in toc -->
+- [Objectifs](#objectifs)
+- [Préparatifs](#préparatifs)
+- [Instructions](#instructions)
+	- [1. Configuration de Babel](#1-configuration-de-babel)
+	- [2. Convertir le code en ES6](#2-convertir-le-code-en-es6)
 
 ## Objectifs
 - Mettre en place les outils nécessaires à l'utilisation d'ES6+ en production
@@ -13,7 +20,9 @@
 	```
 3. Ouvrir http://localhost
 
-## 1. Configuration de Babel
+## Instructions
+
+### 1. Configuration de Babel
 
 Pour installer Babel et compiler votre code ES6+ en ES5, il vous faut Node.JS dernière version (current) : https://nodejs.org/en/download/current/
 Node.JS est livré avec npm (Node Package Manager - l'outil qui permet de télécharger des utilitaires JS) ce qui vous sera utile pour la suite.
@@ -66,7 +75,7 @@ Tapez dans un terminal les instructions suivantes :
 	```bash
 	./node_modules/.bin/babel src -d build --verbose --watch --source-maps
 	```
-## 2. Convertir le code en ES6
+### 2. Convertir le code en ES6
 A chaque étape vérifiez que tout fonctionne toujours dans le navigateur.
 
 Gardez un oeil sur le terminal dans lequel s'exécute babel, les erreurs de compilation apparaîtront là !

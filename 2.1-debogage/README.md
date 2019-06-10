@@ -1,4 +1,13 @@
-# TP 2 - Environnement de debug
+# TP 2 - Environnement de debug<!-- omit in toc -->
+
+## Sommaire <!-- omit in toc -->
+- [Objectifs](#objectifs)
+- [Préparatifs](#préparatifs)
+- [Instructions](#instructions)
+	- [1. devtools : La console](#1-devtools--la-console)
+	- [2. devtools : l'inspecteur d'éléments](#2-devtools--linspecteur-déléments)
+	- [3. devtools : l'onglet Sources](#3-devtools--longlet-sources)
+- [Pour aller plus loin](#pour-aller-plus-loin)
 
 ## Objectifs
 Manipuler les outils de debug intégrés dans Chrome (Chrome Dev Tools)et découvrir quelques outils en ligne utiles.
