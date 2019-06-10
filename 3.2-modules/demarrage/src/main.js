@@ -1,5 +1,5 @@
 // codez ici votre TP
-console.log('Welcome to ', {title:'JSTV', emoji: '📺'});
+console.log( 'Welcome to ', { title: 'JSTV', emoji: '📺' } );
 
 /**
  * Analyse le contenu d'une balise et retourne un tableau d'URL d'images
@@ -9,14 +9,13 @@ console.log('Welcome to ', {title:'JSTV', emoji: '📺'});
  */
 function getSlideshowImages( container ) {
 	// on récupère tous les span contenus dans la balise
-	var spans = container.querySelectorAll( 'span' ),
-		images = [];
-	// pour chaque span on récupère son contenu (innerHTML)
-	spans.forEach( function ( span ) {
-		images.push( span.innerHTML );
-	} );
-	// on retourne le tableau des URLs d'images
-	return images;
+	// Array.from permet de convertir la NodeList en tableau
+	// pratique pour bénéficier de plus de méthodes,
+	// notamment la méthode .map()
+	const spans = Array.from( container.querySelectorAll( 'span' ) );
+	// Pour chaque span on récupère son contenu (innerHTML)
+	// et on retourne le tableau des URLs d'images
+	return spans.map( ( { innerHTML: src } ) => src );
 }
 
 /**
@@ -26,12 +25,12 @@ function getSlideshowImages( container ) {
  * @returns string code HTML du slideshow
  */
 function renderSlideshow( images ) {
-	var slideshow = '';
+	let slideshow = '';
 	// pour chaque image on ajoute le code HTML correspondant
-	images.forEach( function( image ) {
-		slideshow += '<a href="'+image+'"> \
-			<img src="'+image+'" /> \
-		</a>';
+	images.forEach( src => {
+		slideshow += `<a href="${src}">
+			<img src="${src}" />
+		</a>`
 	} );
 	// on retourne le code complet
 	return slideshow;
@@ -43,20 +42,18 @@ function renderSlideshow( images ) {
  * @param {Node} container Element HTML dans lequel se trouve le slideshow
  */
 function slideNext( container ) {
-	var firstSlide = container.querySelector( 'a' );
+	const firstSlide = container.querySelector( 'a' );
 	container.appendChild( firstSlide );
 }
 
 // on initialise le diaporama
-var slideshowContainer = document.querySelector( '.slideshow' ),
+const slideshowContainer = document.querySelector( '.slideshow' ),
 	images = getSlideshowImages( slideshowContainer );
 if ( images.length ) {
 	slideshowContainer.innerHTML = renderSlideshow( images );
 }
 // toutes les 2 secondes on fait défiler le diaporama
-setInterval( function () {
-	slideNext( slideshowContainer );
-}, 2000 );
+setInterval( () => slideNext( slideshowContainer ), 2000 );
 // on ajoute la classe CSS 'single' au slideshow
 // pour n'afficher que la première image
 slideshowContainer.classList.add( 'single' );
