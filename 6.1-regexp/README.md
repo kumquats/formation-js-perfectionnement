@@ -1,16 +1,34 @@
-# TP RegExp - validation de formulaire
+# TP 6.1 - RegExp <!-- omit in toc -->
+
+## Sommaire <!-- omit in toc -->
+- [Objectifs](#objectifs)
+- [Préparatifs](#préparatifs)
+- [Instructions](#instructions)
+- [Pour aller plus loin](#pour-aller-plus-loin)
 
 ## Objectifs
-Manipuler les regexp et les utiliser dans le cas pratique de la validation des données saisies par un utilisateur dans un formulaire.
+- Manipuler les expressions régulières pour valider ou formater des chaînes de caractères
 
 ## Préparatifs
-- récupérer le fichier de démarrage du TP (fourni par le formateur) et le dézipper dans un dossier distinct de votre workspace
+1. **Récupérez le contenu du dossier `demarrage` du TP** *(vous pouvez également repartir des fichiers de votre tp précédent si vous aviez terminé)*
+2. **Lancez un serveur http dans le dossier demarrage/public** :
+	```bash
+	cd /chemin/vers/demarrage/public
+	php -S localhost:80
+	```
+3. **Ouvrez http://localhost**
 
 ## Instructions
-- coder la fonction submitHandler() et si l'email saisi n'est pas dans un format d'email ou si la date n'est pas au format JJ/MM/AAAA, afficher un message en dessous de chaque champ de saisie. 
+1. Adaptez la méthode `handleSubmit()` de la classe `SearchForm` pour vérifier que l'utilisateur a tapé un mot de plus de trois caractères (sans espaces). Si la chaîne saisie correspond, alors on appelle le callback `onSubmit`, sinon on affiche une `alert()` d'erreur.
+2. Adaptez le rendu de la classe `SearchResults` pour formater la date "premiered" au format FR (JJ/MM/AAAA).
 
 ## Pour aller plus loin
-- Si les données sont valides, au lieu de soumettre le formulaire, afficher dans la page le texte "Bonjour <Nom>, tu es né en <mois> de l'année <année>, quelle chance !" où
-    + <Nom> représente le nom de l'utilisateur déduit à partir de la partie gauche de l'email (si elle est séparée par un point -comme dans l'adresse "ned.stark@got.gouv.wnt" par exemple-, alors seule la partie avant le point est utilisée -ici "ned")
-    + <mois> représente le mois de naissance au format texte (et pas numérique).
-    + <année> représente l'année de naissance saisie par l'utilisateur
+- Utiliser les named groups dans la fonction de formattage de la date
+- Adaptez l'affichage de `SearchResults` pour afficher le mois en toutes lettres : par exemple `'2011-04-17'` doit afficher `17 avril 2011`. Utiliser pour cela le tableau suivant :
+	```js
+	const monthNames = [
+		'janvier','février','mars', 'avril', 'mai',
+		'juin', 'juillet', 'août','septembre',
+		'octobre', 'novembre', 'décembre'
+	];
+	```
