@@ -1,45 +1,120 @@
-# TP Framework UI ES6
+# TP 4.1 - POO UI Framework <!-- omit in toc -->
+
+## Sommaire <!-- omit in toc -->
+- [Objectifs](#objectifs)
+- [Préparatifs](#préparatifs)
+- [Instructions](#instructions)
+- [Pour aller plus loin](#pour-aller-plus-loin)
 
 ## Objectifs
-
-L'objectif de ce TP est de créer un framework UI permettant de créer des composants d'interface graphique réutilisables et de mettre en pratique l'héritage en ES6.
+- Développer en Programmation Orientée Objet à l'aide des nouvelles syntaxes ES6+
+- mettre en place les outils nécessaires à l'utilisation des syntaxes expérimentales
+- et toujours faire évoluer notre application JSTV !
 
 ## Préparatifs
+1. **Récupérez le contenu du dossier `demarrage` du TP** *(vous pouvez également repartir des fichiers de votre tp précédent si vous aviez terminé)*
+2. **Lancez un serveur http dans le dossier demarrage/public** :
+	```bash
+	cd /chemin/vers/demarrage/public
+	php -S localhost:80
+	```
+3. **Ouvrez http://localhost**
+4. Installez les plugins babel permettant de supporter les syntaxes expérimentales de la POO (propriétés d'instance et statiques, propriétés et méthodes privées) :
+	```bash
+	npm install --save-dev @babel/plugin-proposal-object-rest-spread @babel/plugin-proposal-class-properties @babel/plugin-proposal-private-methods
+	```
 
-- Installer babeljs (npm install --save-dev babel-cli babel-loader babel-core)
-- Installer les preset ES2015 (npm install --save-dev babel-preset-es2015)
-- Récupérer les fichiers de démarrage (archive fournie)
+	Et modifier le fichier .babelrc :
+	```json
+	{
+		"presets": ["@babel/preset-env"],
+		"plugins": [
+			"@babel/plugin-proposal-object-rest-spread",
+			"@babel/plugin-proposal-class-properties",
+			"@babel/plugin-proposal-private-methods"
+		],
+	}
+	```
 
 ## Instructions
-*NB : pour lancer la compilation, utiliser la commande suivante : .\node_modules\\.bin\babel js -d build --watch --source-maps*
-- Créer une classe "Component" qui représentera un composant graphique générique
-    + Le constructeur de la classe **Component** doit prendre 3 paramètres:
-        * **tagName** (string): Le nom du tag HTML
-        * **attributes** (objet): Liste des attributs HTML du composant
-        * **children** (array): Liste des enfant du composant. Peut contenir d'autres instances de **Component** ou de simples string
-    + La classe devra implémenter les méthodes suivantes
-        * **setAttribute(name, value)** : Permet de modifier/ajouter un attribut
-        * **getAttribute(name)** : Permet de récupérer la valeur d'un attribut
-        * **getTagName()** : Permet de récupérer le tag du composant HTML
-        * **render()**: Retourne le code HTML du composant en chaine de caractère en fonction du **tagName**, des **attributes** et des **children**. Cette méthode doit s'appuyer sur la méthode **renderChildren()** décrite ci-dessous
-        * **renderChildren()**: Retourne le HTML des composants enfants concaténés dans une seule string
-- Créer une classe **Button** qui hérite de **Component**
-    + Le constructeur de la classe doit prendre 2 paramètres:
-        * **text** : Texte à afficher dans le bouton
-        * **attributes** : Attributs du bouton
-    + Par défaut cette classe doit générer un 'button' HTML contenant le texte et les attributs définis dans le constructeur
-- Créer une classe **RoundedRedButton** qui hérite de **Button**
-    + Le constructeur de la classe doit prendre 2 paramètres:
-        * **text** : Texte à afficher dans le bouton
-        * **attributes** : Attributs du bouton
-    + Par défaut cette classe doit afficher un 'button' HTML contenant le texte et les attributs définis dans le constructeur **ET** possédant des coins arrondis, une couleur de texte blanche et une couleur de fond rouge
+Nous allons développer dans ce une classe `Component` qui va permettre de générer du code HTML en JS.
+
+A chaque étape du TP vous allez perfectionner la classe Component pour la rendre capable de gérer des paramètres supplémentaires.
+
+1. **Créez une classe `Component`** dans un module à part `src/Component.js`. La classe dispose de 2 méthodes :
+	- un constructeur qui prend 2 paramètres :
+		+ **tagName** (string): Le nom de la balise HTML à générer
+		+ **children** (array): la liste des enfants du composant.
+	- une méthode `render()` qui retourne pour le moment une chaîne de caractères en dur 'ceci est du HTML'.
+2. **Ajoutez dans le main.js le code suivant :**
+	```js
+	const c = new Component('h1', ['JS']);
+	document.querySelector('body > header').innerHTML = c.render();
+	```
+	Modifier le code de la classe Component pour prendre en compte les paramètres passés au constructeur et faire en sorte que le code ci-dessus injecte dans la page le code :
+	```html
+	<h1>JS</h1>
+	```
+3. **Modifiez le code du main.js avec la ligne suivante :**
+	```js
+	const c = new Component('h1', ['JS', 'TV']);
+	```
+	Complétez le code de la classe Component pour prendre en compte tous les enfants passés en paramètre :
+	```html
+	<h1>JSTV</h1>
+	```
+4. **Prendre en compte les enfants de types `Component` :**
+	```js
+	const c = new Component('h1', [
+	    'JS',
+	    new Component( 'em', ['TV'] )
+	]);
+	```
+	devra rendre :
+	```html
+	<h1>JS<em>TV</em></h1>
+	```
+5. **Gérez un 3e paramètre `attributes` :** Le constructeur de la classe `Component` peut maintenant prendre un 3e paramètre (facultatif) nommé `attributes` :
+	```js
+	const c = new Component(
+		'h1',
+		[
+			'JS',
+			new Component( 'em', ['TV'] )
+		],
+		{ class: 'logo' }
+	);
+	```
+	devra rendre :
+	```html
+	<h1 class="logo">JS<em>TV</em></h1>
+	```
 
 ## Pour aller plus loin
-- organiser le code en modules ES6, créer un module par classe en utilisant [webpack](http://webpack.github.io/)) :
-    + installer webpack : npm install --save-dev webpack
-    + créer un fichier webpack.config.js à la racine du tp (au même niveau que le dossier "node_modules") en suivant les instructions de http://webpack.github.io/docs/usage.html#transpiling-es2015-using-babel-loader
-    + répartir le code de chaque classe dans des fichiers distincts, et utiliser les instructions import / export
-    + déplacer le code contenu dans la page html vers le fichier ui-framework.js et placer la balise script en bas du body
-    + compiler à l'aide de la commande .\node_modules\\.bin\webpack --watch (et plus "babel")
-    + ajouter la gestion des source-maps
-    + minifier et obfusquer le code généré
+1. **Créez une classe `Button` qui hérite de `Component`**. Le constructeur de la classe doit prendre 2 paramètres:
+	- **text** : Texte à afficher dans le bouton
+	- **attributes** : Attributs du bouton
+
+	Le code JS :
+	```js
+	const b = new Button('chercher');
+	```
+	doit générer :
+	```html
+	<button>chercher</button>
+	```
+
+2. **Créez une classe `SearchForm` :**
+	```js
+	const searchForm = new SearchForm();
+	document.querySelector( '.searchForm' ).innerHTML = searchForm.render();
+	```
+	génère :
+	```html
+	<form>
+		<input type="search" name="search" />
+		<button>chercher</button>
+	</form>
+	```
+
+
