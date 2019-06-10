@@ -1,6 +1,8 @@
 import renderSlideshow, { getSlideshowImages, slideNext } from "./slideshow.js";
 import Component from "./Component.js";
 import SearchForm from "./SearchForm.js";
+import SearchResults from "./SearchResults.js";
+import data from './data.json';
 
 // codez ici votre TP
 console.log( 'Welcome to ', { title: 'JSTV', emoji: '📺' } );
@@ -30,3 +32,9 @@ document.querySelector( 'body > header' ).innerHTML = c.render();
 // Formulaire de recherche
 const searchForm = new SearchForm();
 document.querySelector( '.searchForm' ).innerHTML = searchForm.render();
+
+// Page de résultats
+const searchResults = new SearchResults();
+searchResults.results = data;
+const searchResultsContainer = document.querySelector( '.searchResults' );
+searchResultsContainer.innerHTML = searchResults.render();
