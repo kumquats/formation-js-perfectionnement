@@ -33,7 +33,7 @@
 2. **Ouvrez le fichier `package.json` et constatez que jQuery a été ajouté à la liste des dépendances du projet :**
 	```bash
 	  "dependencies": {
-	    "jquery": "^3.3.1"
+	    "jquery": "^3.4.1"
 	  }
 	```
 ### 2. La fonction $()
