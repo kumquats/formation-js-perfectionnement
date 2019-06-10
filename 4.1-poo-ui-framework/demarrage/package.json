@@ -1,15 +1,28 @@
 {
-  "name": "tp-microframework-es6",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {
-    "babel-preset-es2015": "^6.9.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Kumquats",
-  "license": "ISC"
+	"name": "jstv",
+	"version": "1.0.0",
+	"description": "jstv website",
+	"main": "main.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/kumquats/formation-js-perfectionnement.git"
+	},
+	"keywords": [
+		"js",
+		"es6"
+	],
+	"author": "kumquats",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/kumquats/formation-js-perfectionnement/issues"
+	},
+	"homepage": "https://github.com/kumquats/formation-js-perfectionnement#readme",
+	"devDependencies": {
+		"@babel/cli": "^7.4.4",
+		"@babel/core": "^7.4.5",
+		"@babel/preset-env": "^7.4.5"
+	}
 }

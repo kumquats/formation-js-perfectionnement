@@ -1,60 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-	<title>TP Framework UI</title>
-	<script type="text/javascript" src="build/ui-framework.js"></script>
-	<meta charset="utf-8">
-	<style type="text/css">
-		body {
-			font-family: Arial;
-		}
-	</style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>JSTV - Toutes les infos sur les meilleures séries</title>
+	<link rel="stylesheet" href="css/main.css">
+	<script src="build/main.js" defer></script>
 </head>
 <body>
-	<h1>TP Framework UI</h1>
-
-	<div>
-		<h3>Test Component</h3>
-
-		<p>Si tout fonctionne bien, une div avec un h3 et un input text doit s'afficher.</p>
-		<div id="component-container">
-
-		</div>
-		<script>
-			var component = new Component( 'div', { style: "border: 1px solid black" }, [
-					new Component( 'h3', {}, [
-						'Test du ',
-						new Component( 'strong', { style: 'color: blue' }, [ 'framework' ] ),
-						' ui'
-					] ),
-					new Component( 'input', { type: 'text', value: 'Ca a l\'air de fonctionner correctement', style: 'width: 500px' } )
-				] );
-			document.getElementById( 'component-container' ).innerHTML = component.render();
-		</script>
-	</div>
-	<div>
-		<h3>Test Button</h3>
-
-		<p>Si tout fonctionne bien, le Button doit s'afficher ci-dessous.<p>
-		<div id="button-container">
-
-		</div>
-		<script>
-			var button = new Button( 'Ceci est un bouton' );
-			document.getElementById( 'button-container' ).innerHTML = button.render();
-		</script>
-	</div>
-	<div>
-		<h3>Test RoundedRedButton</h3>
-
-		<p>Si tout fonctionne bien, le RoundedRedButton doit s'afficher ci-dessous.<p>
-		<div id="rounded-red-button-container">
-
-		</div>
-		<script>
-			var roundedRedButton = new RoundedRedButton( 'Ceci est un bouton rouge arrondi' );
-			document.getElementById( 'rounded-red-button-container' ).innerHTML = roundedRedButton.render();
-		</script>
-	</div>
+	<header>
+		<a href="#" class="logo">JS<img src="images/tv.svg" alt="TV"/></a>
+	</header>
+	<section class="searchForm"></section>
+	<section class="searchResults"></section>
+	<aside class="sidebar">
+		<section class="slideshow">
+			<span>images/got.gif</span>
+			<span>images/td.gif</span>
+			<span>images/twd.gif</span>
+		</section>
+		<section class="liveSearch"></section>
+	</aside>
+	<footer>
+		<div>Icons made by <a href="https://www.freepik.com/?__hstc=57440181.51347cd8618843e7a416f4ec9424fd24.1560114189662.1560114189662.1560114189662.1&__hssc=57440181.1.1560114189662&__hsfp=266348883" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+	</footer>
 </body>
 </html>
