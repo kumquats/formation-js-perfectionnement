@@ -19,7 +19,7 @@
 	php -S localhost:80
 	```
 3. **Ouvrez http://localhost**
-4. Installez les plugins babel permettant de supporter les syntaxes expérimentales de la POO (propriétés d'instance et statiques, propriétés et méthodes privées) :
+4. **Installez les plugins babel permettant de supporter les syntaxes expérimentales de la POO** (propriétés d'instance et statiques, propriétés et méthodes privées) :
 	```bash
 	npm install --save-dev @babel/plugin-proposal-object-rest-spread @babel/plugin-proposal-class-properties @babel/plugin-proposal-private-methods
 	```
@@ -37,7 +37,7 @@
 	```
 
 ## Instructions
-Nous allons développer dans ce une classe `Component` qui va permettre de générer du code HTML en JS.
+Nous allons développer dans ce TP une classe `Component` qui va permettre de générer du code HTML en JS.
 
 A chaque étape du TP vous allez perfectionner la classe Component pour la rendre capable de gérer des paramètres supplémentaires.
 
