@@ -12,13 +12,27 @@
 - convertir le code de notre application JSTV en ES6+
 
 ## Préparatifs
-1. Récupérer le contenu du dossier `demarrage` du TP *(vous pouvez également repartir des fichiers de votre tp précédent si vous aviez terminé)*
-2. **Lancer un serveur http dans le dossier demarrage** :
+1. **Récupérez le contenu du dossier `demarrage` du TP** *(vous pouvez également repartir des fichiers de votre tp précédent si vous aviez terminé)*
+2. **Modifiez l'arborescence du projet** *(déplacez `main.js` dans un sous-dossier `src`, le `index.html`, le `css` et les images dans un sous-dossier `public` )* :
 	```bash
-	cd /chemin/vers/demarrage
+	demarrage/
+	  ├─ public/
+	  │   ├─ images/
+	  │   │   ├─ ...
+	  │   │   └─ ...
+	  │   ├─ css/main.css
+	  │   └─ index.html
+	  ├─ src/
+	  │   └─ main.js
+	  ├─ .babelrc
+	  └─ package.json
+	```
+3. **Lancez un serveur http dans le dossier demarrage/public** :
+	```bash
+	cd /chemin/vers/demarrage/public
 	php -S localhost:80
 	```
-3. Ouvrir http://localhost
+4. **Ouvrez http://localhost**
 
 ## Instructions
 
@@ -49,31 +63,19 @@ Tapez dans un terminal les instructions suivantes :
 		"presets": ["@babel/preset-env"]
 	}
 	```
-6. **Modifiez l'arborescence du projet (déplacez `main.js` dans un sous-dossier `src`) :**
+6. **Vous pouvez maintenant compiler votre code ES6+ en ES5** à l'aide de la commande :
 	```bash
-	demarrage/
-	  ├─ images/
-	  │   ├─ ...
-	  │   └─ ...
-	  ├─ src/
-	  │   └─ main.js
-	  ├─ .babelrc
-	  ├─ index.html
-	  └─ package.json
+	./node_modules/.bin/babel src -d public/build
 	```
-7. **Vous pouvez maintenant compiler votre code ES6+ en ES5** à l'aide de la commande :
-	```bash
-	./node_modules/.bin/babel src -d build
-	```
-	Cette commande va créer un dossier `build` dans lequel sera placé le fichier main.js compilé !
+	Cette commande va créer un dossier `public/build` dans lequel sera placé le fichier main.js compilé !
 
-	Vérifiez que le fichier build/main.js est bien compilé et qu'il ne reste plus de traces de code ES6 (const, let, ...). Si ce n'est pas le cas, c'est que le .babelrc est mal configuré ou que vous avez raté une étape !
+	Vérifiez que le fichier public/build/main.js est bien compilé et qu'il ne reste plus de traces de code ES6 (const, let, ...). Si ce n'est pas le cas, c'est que le .babelrc est mal configuré ou que vous avez raté une étape !
 
-8. **Une fois le fichier `build/main.js` créé, modifiez le fichier index.html pour charger ce fichier à la place du `main.js`. Rechargez la page pour vérifier que tout fonctionne toujours correctement !**
+8. **Une fois le fichier `public/build/main.js` créé, modifiez le fichier index.html pour charger ce fichier à la place du `main.js`. Rechargez la page pour vérifier que tout fonctionne toujours correctement !**
 
 9. **Pour simplifier le travail et éviter d'avoir à compiler manuellement à chaque modification**, utilisez la commande suivante qui va tourner en tâche de fond et recompiler à chaque sauvegarde du fichier js/main.js :
 	```bash
-	./node_modules/.bin/babel src -d build --verbose --watch --source-maps
+	./node_modules/.bin/babel src -d public/build --verbose --watch --source-maps
 	```
 ### 2. Convertir le code en ES6
 A chaque étape vérifiez que tout fonctionne toujours dans le navigateur.
