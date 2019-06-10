@@ -15,8 +15,8 @@ class SearchResultRenderer extends Component {
 				${ image ? `<img src="${image.medium}" class="thumbnail" />` : ''}
 				<section class="infos">
 					<h3>${name}</h3>
-					<p>${summary}</p>
 					${ premiered ? `<time datetime="${premiered}">${premiered}</time>` : ''}
+					${summary}
 					${ officialSite ? `<a href="${officialSite}">${officialSite}</a>` : ''}
 				</section>
 			</article>
