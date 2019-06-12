@@ -9,6 +9,11 @@ export default class SearchForm extends Component {
 	#input;
 	onSubmit;
 
+	set search( value ) {
+		if ( this.#input ) {
+			this.#input.val( value );
+		}
+	}
 
 	constructor() {
 		super( 'form', [

@@ -3,7 +3,6 @@ import renderSlideshow, { getSlideshowImages, slideNext } from "./slideshow.js";
 import Component from "./Component.js";
 import SearchForm from "./SearchForm.js";
 import SearchResults from "./SearchResults.js";
-import data from './data.json';
 
 // codez ici votre TP
 console.log( 'Welcome to ', { title: 'JSTV', emoji: '📺' } );
@@ -37,11 +36,46 @@ searchFormContainer.html( searchForm.render() );
 searchForm.mount( searchFormContainer );
 // au submit du formulaire de recherche on exécute la fonction suivante
 searchForm.onSubmit = value => {
-	console.log(`Recherche de la valeur : ${ value }` );
+	console.log( `Recherche de la valeur : ${value}` );
+	// on sauvegarde le texte recherché en LocalStorage
+	localStorage.setItem( 'lastSearch', value );
+	// on lance la requête AJAX vers l'API tvmaze
+	search( value );
 }
 
 // Page de résultats
 const searchResults = new SearchResults();
-searchResults.results = data;
+searchResults.results = [];
 const searchResultsContainer = $( '.searchResults' );
 searchResultsContainer.html( searchResults.render() );
+searchResults.mount( searchResultsContainer );
+
+
+// Chargement AJAX news.html
+function displayNews( html ) {
+	$( '.news' ).html( html );
+}
+fetch( './news.html' )
+	.then( response => response.text() )
+	.then( displayNews );
+
+// Chargement AJAX des résultats de recherche
+function search( value ){
+	// on met à jour le formulaire de recherche
+	// (utile si l'on vient de restaurer la recherche depuis le localStorage)
+	searchForm.search = value;
+	// on lance l'appel AJAX
+	fetch( `http://api.tvmaze.com/search/shows?q=${encodeURIComponent( value )}` )
+		.then( response => response.json() )
+		.then( data => {
+			// une fois les résultats reçus, on les envoie au searchResults
+			// pour les afficher
+			searchResults.results = data;
+		} );
+}
+
+// restauration de la recherche depuis le localStorage
+const lastSearch = localStorage.getItem('lastSearch');
+if ( lastSearch ) {
+	search( lastSearch );
+}

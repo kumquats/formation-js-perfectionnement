@@ -31,6 +31,9 @@ export default class SearchResults extends Component {
 	set results( value ) {
 		this.#results = value;
 		this.children = this.#results.map( result => new SearchResultRenderer( result ) );
+		if ( this.element ){
+			this.element.html( this.render() );
+		}
 	}
 
 	constructor() {
