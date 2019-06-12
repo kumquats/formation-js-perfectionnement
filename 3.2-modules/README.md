@@ -37,7 +37,13 @@ Ce fichier sert à plusieurs choses et notamment :
 
 	En effet, un nouveau développeur n'aurait qu'à exécuter la commande `npm install` (sans préciser de nom de paquet) pour installer automatiquement toutes les dépendances du projet !
 
-2. **Dans ce fichier on va également pouvoir ajouter des "scripts personnalisés" que l'on pourra lancer à l'aide de la commande `npm run xxxxx`.** C'est cette dernière possibilité que l'on va maintenant utiliser pour nous simplifier la vie dans la suite du TP.
+	C'est donc cette commande que vous allez lancer pour récupérer les différents paquets décrits dans le `packages.json` :
+	```bash
+	cd /chemin/vers/demarrage
+	npm install
+	```
+
+2. **Dans ce fichier on va également pouvoir ajouter des "scripts personnalisés" que l'on pourra lancer à l'aide de la commande `npm run xxxxx`.** C'est ce que l'on va utiliser pour nous simplifier la vie dans la suite du TP.
 
 ### *Préparatifs 3.:* Créer un script de build personnalisé
 Jusque là pour lancer la compilation avec [Babel](https://babeljs.io), nous lancions une des deux commandes suivantes :
