@@ -28,7 +28,7 @@
 2. Adaptez le rendu de la classe `SearchResults` pour formater la date "premiered" au format FR (JJ/MM/AAAA).
 
 ## Pour aller plus loin
-- Utiliser les named groups dans la fonction de formattage de la date
+- Utiliser les named groups dans la fonction de formatage de la date
 - Adaptez l'affichage de `SearchResults` pour afficher le mois en toutes lettres : par exemple `'2011-04-17'` doit afficher `17 avril 2011`. Utiliser pour cela le tableau suivant :
 	```js
 	const monthNames = [
