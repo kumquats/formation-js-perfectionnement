@@ -97,7 +97,9 @@ Comme on peut le voir, **aucune version d'Internet Explorer n'est compatible ave
 
 	Si vous avez compris, vous pouvez effacer les `console.log` inutiles et passer à la suite. Sinon appelez le formateur !
 
-6. **À l'aide de l'API DOM injectez le contenu du fichier `news.html` au début de la balise `<aside class="sidebar">`**. Plutôt que de tout coder dans le `.then()` on va passer par une nouvelle fonction `displayNews`:
+6. **À l'aide de l'API DOM injectez le contenu du fichier `news.html` dans la page :**
+	- modifiez manuellement (pas en JS) le fichier `index.html` pour ajouter au début de la balise `<aside class="sidebar">` une nouvelle section `<section class="news"></section>`
+	- Injectez (cette fois en JS) le contenu du fichier `news.html` dans cette nouvelle balise. Plutôt que de tout coder dans le `.then()` on va passer par une nouvelle fonction `displayNews`:
 	```js
 	function displayNews(html) {
 	    //
@@ -123,4 +125,6 @@ Comme on peut le voir, **aucune version d'Internet Explorer n'est compatible ave
 	Ca y est ! La page s'affiche maintenant avec la liste des séries qui correspondent à la recherche ! :metal: :tada: :trophy: :beers:
 
 ## Pour aller plus loin
-Détectez le clic sur un résultat et afficher une div contenant la liste des épisodes de la série. La liste des épisodes est disponible sur l'API https://www.tvmaze.com/api#show-episode-list
+- Sauvegardez les recherches de l'utilisateur en LocalStorage et relancez la recherche automatiquement au chargement de la page si une valeur était sauvegardée (pensez à mettre à jour aussi la valeur dans le champ de saisie du formulaire de recherche)
+- Mettez en place le fetch polyfill de github
+- Détectez le clic sur un résultat et afficher une div contenant la liste des épisodes de la série. La liste des épisodes est disponible sur l'API https://www.tvmaze.com/api#show-episode-list
