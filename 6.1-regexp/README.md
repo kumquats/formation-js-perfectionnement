@@ -17,6 +17,11 @@
 	php -S localhost:80
 	```
 3. **Ouvrez http://localhost**
+4. **Installez les dépendances du projet (babel, webpack, etc.)** à l'aide de la commande :
+	```bash
+	cd /chemin/vers/demarrage
+	npm install
+	```
 
 ## Instructions
 1. Adaptez la méthode `handleSubmit()` de la classe `SearchForm` pour vérifier que l'utilisateur a tapé un mot de plus de trois caractères (sans espaces). Si la chaîne saisie correspond, alors on appelle le callback `onSubmit`, sinon on affiche une `alert()` d'erreur.

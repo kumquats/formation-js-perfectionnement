@@ -22,6 +22,11 @@
 	php -S localhost:80
 	```
 3. **Ouvrez http://localhost**
+4. **Installez les dépendances du projet (babel, webpack, etc.)** à l'aide de la commande :
+	```bash
+	cd /chemin/vers/demarrage
+	npm install
+	```
 
 ## Instructions
 ### 1. Installation de jQuery

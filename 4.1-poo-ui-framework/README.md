@@ -19,7 +19,12 @@
 	php -S localhost:80
 	```
 3. **Ouvrez http://localhost**
-4. **Installez les plugins babel permettant de supporter les syntaxes expérimentales de la POO** (propriétés d'instance et statiques, propriétés et méthodes privées) :
+4. **Installez les dépendances du projet (babel, webpack, etc.)** à l'aide de la commande :
+	```bash
+	cd /chemin/vers/demarrage
+	npm install
+	```
+6. **Installez les plugins babel permettant de supporter les syntaxes expérimentales de la POO** (propriétés d'instance et statiques, propriétés et méthodes privées) :
 	```bash
 	npm install --save-dev @babel/plugin-proposal-object-rest-spread @babel/plugin-proposal-class-properties @babel/plugin-proposal-private-methods
 	```
