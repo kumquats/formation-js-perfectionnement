@@ -3,6 +3,7 @@ import renderSlideshow, { getSlideshowImages, slideNext } from "./slideshow.js";
 import Component from "./Component.js";
 import SearchForm from "./SearchForm.js";
 import SearchResults from "./SearchResults.js";
+import LiveSearch from './LiveSearch.js';
 
 // codez ici votre TP
 console.log( 'Welcome to ', { title: 'JSTV', emoji: '📺' } );
@@ -41,6 +42,8 @@ searchForm.onSubmit = value => {
 	localStorage.setItem( 'lastSearch', value );
 	// on lance la requête AJAX vers l'API tvmaze
 	search( value );
+	// on envoie la recherche au serveur socket.io
+	liveSearch.emitSearch( value );
 }
 
 // Page de résultats
@@ -79,3 +82,10 @@ const lastSearch = localStorage.getItem('lastSearch');
 if ( lastSearch ) {
 	search( lastSearch );
 }
+
+// gestion de la liste des recherches
+const liveSearchContainer = $( '.liveSearch' );
+const liveSearch = new LiveSearch();
+liveSearch.onItemClick = search;
+liveSearchContainer.html( liveSearch.render() );
+liveSearch.mount( liveSearchContainer );
