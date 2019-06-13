@@ -4,7 +4,10 @@
  * @see Button
  */
 export default class Component {
-	element;
+	tagName;
+	children;
+	attributes;
+
 	/**
 	 * Constructeur du composant.
 	 * Permet de l'initialiser avec son tagName, une liste d'attributs et des enfants.
