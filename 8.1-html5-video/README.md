@@ -26,7 +26,7 @@
 
 
 ## Instructions
-1. Ajouter dans la fonction `renderPage()` ajoutez le code html suivant dans la balise `<aside class="sidebar">` juste après la section "news" :
+1. Ajouter dans la fonction `renderPage()` le code html suivant *(dans la balise `<aside class="sidebar">` juste après la section "news")* :
 	```html
 	<section class="player">
 		<video>
