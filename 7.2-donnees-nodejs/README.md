@@ -45,7 +45,7 @@
 	require('./server/index.js');
 	```
 
-3. Créez un dossier `src/server` et y placer un fichier `index.js` dans lequel on va initialiser un serveur socket.io :
+3. Créez un dossier `server` à la racine du dossier `demarrage` (au même niveau que le `package.json`) et y placer un fichier `index.js` dans lequel on va initialiser un serveur socket.io :
 	```js
 	import express from 'express';
 	import SocketServer from 'socket.io';
