@@ -4,6 +4,7 @@ import Component from "./Component.js";
 import SearchForm from "./SearchForm.js";
 import SearchResults from "./SearchResults.js";
 import LiveSearch from './LiveSearch.js';
+import Player from './Player.js';
 
 // codez ici votre TP
 console.log( 'Welcome to ', { title: 'JSTV', emoji: '📺' } );
@@ -63,7 +64,7 @@ fetch( './news.html' )
 	.then( displayNews );
 
 // Chargement AJAX des résultats de recherche
-function search( value ){
+function search( value ) {
 	// on met à jour le formulaire de recherche
 	// (utile si l'on vient de restaurer la recherche depuis le localStorage)
 	searchForm.search = value;
@@ -78,7 +79,7 @@ function search( value ){
 }
 
 // restauration de la recherche depuis le localStorage
-const lastSearch = localStorage.getItem('lastSearch');
+const lastSearch = localStorage.getItem( 'lastSearch' );
 if ( lastSearch ) {
 	search( lastSearch );
 }
@@ -89,3 +90,6 @@ const liveSearch = new LiveSearch();
 liveSearch.onItemClick = search;
 liveSearchContainer.html( liveSearch.render() );
 liveSearch.mount( liveSearchContainer );
+
+// Player video
+const player = new Player( '.player' );

@@ -24,6 +24,17 @@ export default function renderPage() {
 	<section class="searchResults">${searchResults.render()}</section>
 	<aside class="sidebar">
 		<section class="news"></section>
+		<section class="player">
+			<video>
+				<source src="video.mp4" type="video/mp4"/>
+			</video>
+			<nav class="player-controls">
+				<button class="playButton">play</button>
+				<button class="pauseButton">pause</button>
+				<button class="stopButton">stop</button>
+				<input type="range" max="100" min="0" step="1" />
+			</nav>
+		</section>
 		<section class="slideshow">${slideshow}</section>
 		<section class="liveSearch"></section>
 	</aside>
