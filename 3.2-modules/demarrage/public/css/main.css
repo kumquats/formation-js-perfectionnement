@@ -271,3 +271,51 @@ body > footer {
 	padding: 30px;
 	color: hsl(200, 18%, 56%);
 }
+.player {
+	display: flex;
+	flex-direction: column;
+}
+.player video {
+	width: 100%;
+	margin: 0;
+}
+.player-controls {
+	display: flex;
+	flex-wrap: wrap;
+	/* align-items: center; */
+	justify-content: center;
+}
+.playButton, .pauseButton, .stopButton {
+	width: 33%;
+	flex-grow: 1;
+	height: 20px;
+	font-size: 8px;
+	background-color: hsl(200, 18%, 56%);
+	color: hsl(200, 18%, 36%);
+	border: 1px hsl(200, 18%, 36%) solid;
+	border-color: hsl(200, 18%, 36%);
+	background: hsl(200, 18%, 26%);
+	cursor: pointer;
+	color: hsl(200, 18%, 56%);
+	transition: all .2s ease;
+}
+.playButton:hover, .pauseButton:hover, .stopButton:hover {
+	background: hsl(200, 18%, 56%);
+	color: hsl(200, 18%, 26%);
+	border-color: hsl(200, 18%, 26%);
+}
+.playButton:focus, .pauseButton:focus, .stopButton:focus{
+	outline: none;
+}
+
+.playButton {
+	border-bottom-left-radius: 3px;
+	border-right: none;
+}
+.stopButton {
+	border-bottom-right-radius: 3px;
+	border-left: none;
+}
+.player-controls input[type=range] {
+	width: 100%;
+}
