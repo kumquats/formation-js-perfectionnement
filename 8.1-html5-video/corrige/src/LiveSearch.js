@@ -45,7 +45,7 @@ export default class LiveSearch extends Component {
 			this.searchHistory = searchHistory;
 		} );
 		// détection du click sur un élément
-		this.element.delegate( '[data-search]', 'click', event => {
+		this.element.on( 'click', '[data-search]', event => {
 			event.preventDefault();
 			const search = event.target.getAttribute( 'data-search' );
 			// si le click provient d'un lien avec un attribut data-search
