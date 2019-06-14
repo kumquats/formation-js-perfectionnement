@@ -1,4 +1,4 @@
-# TP 7.1 Échange de données - NodeJS <!-- omit in toc -->
+# TP 7.2 Échange de données - NodeJS <!-- omit in toc -->
 
 ## Sommaire <!-- omit in toc -->
 - [Objectifs](#objectifs)
