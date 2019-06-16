@@ -1,16 +1,16 @@
 # TP 7.1 Échange de données - AJAX <!-- omit in toc -->
 
 ## Sommaire <!-- omit in toc -->
-- [Objectifs](#objectifs)
-- [Préparatifs](#préparatifs)
-- [Instructions](#instructions)
-	- [1. Charger un fichier statique](#1-charger-un-fichier-statique)
-	- [2. Appeler une API REST/JSON en GET](#2-appeler-une-api-restjson-en-get)
-- [Pour aller plus loin](#pour-aller-plus-loin)
+- [Objectifs](#Objectifs)
+- [Préparatifs](#Préparatifs)
+- [Instructions](#Instructions)
+	- [1. Charger un fichier statique](#1-Charger-un-fichier-statique)
+	- [2. Appeler une API REST/JSON en GET](#2-Appeler-une-API-RESTJSON-en-GET)
+- [Pour aller plus loin](#Pour-aller-plus-loin)
 
 ## Objectifs
 - Charger des fichiers statiques avec l'API fetch
-- Connecter notre application JSTV à des webservices (API REST JSON) et exploiter les données retournées
+- Connecter notre application JSFLIX à des webservices (API REST JSON) et exploiter les données retournées
 
 ## Préparatifs
 1. **Récupérez le contenu du dossier `demarrage` du TP** *(vous pouvez également repartir des fichiers de votre tp précédent si vous aviez terminé)*
@@ -46,11 +46,10 @@ Comme on peut le voir, **aucune version d'Internet Explorer n'est compatible ave
 1. **Créez un fichier `news.html` dans le dossier `demarrage/public` avec le code html suivant** :
 	```html
 	<article class="news">
-	  <h2>La dernière actu</h2>
-	  <p>
-	    Bienvenue sur le tout nouveau site JS
-		<img src="images/tv.svg" height="20" /> !
-	  </p>
+	    <h2>La dernière actu</h2>
+	    <p>
+	        Bienvenue sur le tout nouveau JSFLIX !
+	    </p>
 	</article>
 	```
 2. **Dans le fichier main.js, lancez le chargement du fichier `news.html` avec l'API fetch** :
@@ -98,8 +97,8 @@ Comme on peut le voir, **aucune version d'Internet Explorer n'est compatible ave
 	Si vous avez compris, vous pouvez effacer les `console.log` inutiles et passer à la suite. Sinon appelez le formateur !
 
 6. **À l'aide de l'API DOM injectez le contenu du fichier `news.html` dans la page :**
-	- modifiez manuellement (pas en JS) le fichier `index.html` pour ajouter au début de la balise `<aside class="sidebar">` une nouvelle section `<section class="news"></section>`
-	- Injectez (cette fois en JS) le contenu du fichier `news.html` dans cette nouvelle balise. Plutôt que de tout coder dans le `.then()` on va passer par une nouvelle fonction `displayNews`:
+
+	Injectez (en JS) le contenu du fichier `news.html` dans la section `<section class="news"></section>`. Plutôt que de tout coder dans le `.then()` on va passer par une nouvelle fonction `displayNews`:
 	```js
 	function displayNews(html) {
 	    //

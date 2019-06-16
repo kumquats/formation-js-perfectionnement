@@ -2,22 +2,25 @@ import $ from 'jquery';
 
 export default class Player {
 	#selector;
+	#element;
 	#video;
 	#videoElement;
 	#playButton;
 	#pauseButton;
 	#stopButton;
 	#range;
+	#closeButton;
 
 	constructor( selector ) {
 		this.#selector = selector;
-		const element = $( selector );
-		this.#video = element.find( 'video' );
+		this.#element = $( selector );
+		this.#video = this.#element.find( 'video' );
 		this.#videoElement = this.#video.get(0);
-		this.#playButton = element.find( '.playButton' );
-		this.#pauseButton = element.find( '.pauseButton' );
-		this.#stopButton = element.find( '.stopButton' );
-		this.#range = element.find( 'input[type=range]' );
+		this.#playButton = this.#element.find( '.playButton' );
+		this.#pauseButton = this.#element.find( '.pauseButton' );
+		this.#stopButton = this.#element.find( '.stopButton' );
+		this.#range = this.#element.find( 'input[type=range]' );
+		this.#closeButton = this.#element.find( '.closeButton' );
 
 		this.#video.on( 'timeupdate', event => this.updateRange( event ) );
 		this.#playButton.on( 'click', event => {
@@ -33,7 +36,16 @@ export default class Player {
 			this.stop();
 		} );
 		this.#range.change( event => this.seek( this.#range.val() ) );
-
+		this.#closeButton.click( event => {
+			this.hide();
+		});
+	}
+	show(){
+		this.#element.addClass('visible');
+	}
+	hide(){
+		this.pause();
+		this.#element.removeClass('visible');
 	}
 	play(){
 		this.#videoElement.play();

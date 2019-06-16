@@ -7,7 +7,7 @@ import renderPage from './renderPage';
 const app = express(),
 	server = http.createServer( app ),
 	io = new SocketServer( server ),
-	port = 8080;
+	port = 80;
 
 // serveur http express
 // pour la page index...
@@ -40,6 +40,6 @@ io.on( 'connection', socket => {
 } );
 
 server.listen( port, () => {
-	console.log( `l'appli JSTV est lancée sur le port ${port} !
+	console.log( `l'appli JSFLIX est lancée sur le port ${port} !
 	connectez vous sur http://localhost${port != 80 ? port : ''}` );
 } );

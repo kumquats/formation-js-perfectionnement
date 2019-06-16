@@ -6,7 +6,7 @@ import SearchResults from "./SearchResults.js";
 import data from './data.json';
 
 // codez ici votre TP
-console.log( 'Welcome to ', { title: 'JSTV', emoji: '📺' } );
+console.log( 'Welcome to ', { title: 'JSFLIX', emoji: '📺' } );
 
 
 // on initialise le diaporama
@@ -24,11 +24,11 @@ slideshowContainer.addClass( 'single' );
 // création du header
 const c = new Component( 'h1', [
 		'JS',
-		new Component( 'em', [ 'TV' ] )
+		new Component( 'em', [ 'FLIX' ] )
 	],
 	{ class: 'logo' }
 );
-$( 'body > header' ).html( c.render() );
+$( 'body > header > nav' ).html( c.render() );
 
 // Formulaire de recherche
 const searchForm = new SearchForm();

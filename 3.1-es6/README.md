@@ -1,15 +1,15 @@
 # TP 3.1 - ES6 <!-- omit in toc -->
 
 ## Sommaire <!-- omit in toc -->
-- [Objectifs](#objectifs)
-- [Préparatifs](#préparatifs)
-- [Instructions](#instructions)
-	- [1. Configuration de Babel](#1-configuration-de-babel)
-	- [2. Convertir le code en ES6](#2-convertir-le-code-en-es6)
+- [Objectifs](#Objectifs)
+- [Préparatifs](#Préparatifs)
+- [Instructions](#Instructions)
+	- [1. Configuration de Babel](#1-Configuration-de-Babel)
+	- [2. Convertir le code en ES6](#2-Convertir-le-code-en-ES6)
 
 ## Objectifs
 - Mettre en place les outils nécessaires à l'utilisation d'ES6+ en production
-- convertir le code de notre application JSTV en ES6+
+- convertir le code de notre application JSFLIX en ES6+
 
 ## Préparatifs
 1. **Récupérez le contenu du dossier `demarrage` du TP** *(vous pouvez également repartir des fichiers de votre tp précédent si vous aviez terminé)*

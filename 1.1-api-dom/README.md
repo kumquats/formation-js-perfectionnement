@@ -1,17 +1,17 @@
 # TP 1 - Rappels <!-- omit in toc -->
 
 ## Sommaire <!-- omit in toc -->
-- [Objectifs](#objectifs)
-- [Préparatifs](#préparatifs)
-- [Instructions](#instructions)
-- [Pour aller plus loin](#pour-aller-plus-loin)
+- [Objectifs](#Objectifs)
+- [Préparatifs](#Préparatifs)
+- [Instructions](#Instructions)
+- [Pour aller plus loin](#Pour-aller-plus-loin)
 
 
 ## Objectifs
 - Mettre en place son environnement de développement
 - manipuler les types et fonctions de base de JavaScript
 - travailler avec l'API DOM pour manipuler la page HTML en JS
-- et en profiter pour poser les bases de l'application ***"JSTV"*** que nous développerons tout au long des différents TPs
+- et en profiter pour poser les bases de l'application ***"JSFLIX"*** que nous développerons tout au long des différents TPs
 
 ## Préparatifs
 1. **Créer un dossier pour ce TP** et y placer le contenu du dossier de démarrage fourni dans ce repo.

@@ -39,7 +39,7 @@ export default class LiveSearch extends Component {
 	mount( element ) {
 		super.mount( element );
 		// connexion à socket.io
-		this.socket = io( 'http://localhost:8080' );
+		this.socket = io( 'http://localhost' );
 		this.socket.on( 'searchHistoryUpdate', searchHistory => {
 			console.log( 'searchHistoryUpdate', searchHistory );
 			this.searchHistory = searchHistory;

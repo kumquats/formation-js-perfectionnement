@@ -7,7 +7,7 @@ import LiveSearch from './LiveSearch.js';
 import Player from './Player.js';
 
 // codez ici votre TP
-console.log( 'Welcome to ', { title: 'JSTV', emoji: '📺' } );
+console.log( 'Welcome to ', { title: 'JSFLIX', emoji: '📺' } );
 
 
 // on initialise le diaporama
@@ -25,11 +25,11 @@ slideshowContainer.addClass( 'single' );
 // création du header
 const c = new Component( 'h1', [
 		'JS',
-		new Component( 'em', [ 'TV' ] )
+		new Component( 'em', [ 'FLIX' ] )
 	],
 	{ class: 'logo' }
 );
-$( 'body > header' ).html( c.render() );
+$( 'body > header > nav' ).html( c.render() );
 
 // Formulaire de recherche
 const searchForm = new SearchForm();
@@ -39,8 +39,6 @@ searchForm.mount( searchFormContainer );
 // au submit du formulaire de recherche on exécute la fonction suivante
 searchForm.onSubmit = value => {
 	console.log( `Recherche de la valeur : ${value}` );
-	// on sauvegarde le texte recherché en LocalStorage
-	localStorage.setItem( 'lastSearch', value );
 	// on lance la requête AJAX vers l'API tvmaze
 	search( value );
 	// on envoie la recherche au serveur socket.io
@@ -65,8 +63,10 @@ fetch( './news.html' )
 
 // Chargement AJAX des résultats de recherche
 function search( value ) {
+	// on sauvegarde le texte recherché en LocalStorage
+	localStorage.setItem( 'lastSearch', value );
 	// on met à jour le formulaire de recherche
-	// (utile si l'on vient de restaurer la recherche depuis le localStorage)
+	// (utile au chargement de la page si l'on vient de restaurer la recherche depuis le localStorage)
 	searchForm.search = value;
 	// on lance l'appel AJAX
 	fetch( `http://api.tvmaze.com/search/shows?q=${encodeURIComponent( value )}` )
@@ -93,3 +93,7 @@ liveSearch.mount( liveSearchContainer );
 
 // Player video
 const player = new Player( '.player' );
+$('.banner a').click( event => {
+	event.preventDefault();
+	player.show();
+ });
