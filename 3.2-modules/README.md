@@ -1,17 +1,17 @@
 # TP 3.2 - Modules <!-- omit in toc -->
 
 ## Sommaire <!-- omit in toc -->
-- [Objectifs](#objectifs)
-- [Préparatifs](#préparatifs)
-	- [*Préparatifs 2. :* Le fichier `package.json`](#préparatifs-2--le-fichier-packagejson)
-	- [*Préparatifs 3.:* Créer un script de build personnalisé](#préparatifs-3-créer-un-script-de-build-personnalisé)
-- [Instructions](#instructions)
-	- [1. Le support natif des modules dans les navigateurs modernes](#1-le-support-natif-des-modules-dans-les-navigateurs-modernes)
-	- [2. Rendre les modules compatibles avec les vieux navigateurs](#2-rendre-les-modules-compatibles-avec-les-vieux-navigateurs)
+- [Objectifs](#Objectifs)
+- [Préparatifs](#Préparatifs)
+	- [*Préparatifs 2. :* Le fichier `package.json`](#Préparatifs-2--Le-fichier-packagejson)
+	- [*Préparatifs 3.:* Créer un script de build personnalisé](#Préparatifs-3-Créer-un-script-de-build-personnalisé)
+- [Instructions](#Instructions)
+	- [1. Le support natif des modules dans les navigateurs modernes](#1-Le-support-natif-des-modules-dans-les-navigateurs-modernes)
+	- [2. Rendre les modules compatibles avec les vieux navigateurs](#2-Rendre-les-modules-compatibles-avec-les-vieux-navigateurs)
 
 ## Objectifs
 - Mettre en place les outils nécessaires à l'utilisation des modules ES6 en production
-- répartir le code de notre application JSTV dans plusieurs modules
+- répartir le code de notre application JSFLIX dans plusieurs modules
 
 ## Préparatifs
 1. **Récupérez le contenu du dossier `demarrage` du TP** *(vous pouvez également repartir des fichiers de votre tp précédent si vous aviez terminé)*

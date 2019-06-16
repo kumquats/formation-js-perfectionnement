@@ -1,10 +1,10 @@
 # TP 8.1 API HTML5 : media player <!-- omit in toc -->
 
 ## Sommaire <!-- omit in toc -->
-- [Objectifs](#objectifs)
-- [Préparatifs](#préparatifs)
-- [Instructions](#instructions)
-- [Pour aller plus loin](#pour-aller-plus-loin)
+- [Objectifs](#Objectifs)
+- [Préparatifs](#Préparatifs)
+- [Instructions](#Instructions)
+- [Pour aller plus loin](#Pour-aller-plus-loin)
 
 
 ## Objectifs
@@ -26,9 +26,9 @@
 
 
 ## Instructions
-1. Ajouter dans la fonction `renderPage()` le code html suivant *(dans la balise `<aside class="sidebar">` juste après la section "news")* :
+1. Dans la fonction `renderPage()` définie dans le fichier `server/renderPage.js`, ajoutez le code html suivant *(dans la balise `<section class="banner">` juste après le lien `<a href="#">Play</a>`)* :
 	```html
-	<section class="player">
+	<div class="player">
 		<video>
 			<source src="video.mp4" type="video/mp4"/>
 		</video>
@@ -36,14 +36,18 @@
 			<button class="playButton">play</button>
 			<button class="pauseButton">pause</button>
 			<button class="stopButton">stop</button>
-			<input type="range" max="100" min="0" step="1" />
+			<input type="range" max="100" min="0" step=".1" value="0" />
 		</nav>
-	</section>
+		<button class="closeButton"></button>
+	</div>
 	```
-2. Utiliser l'api HTML5 de la balise video pour permettre de lancer la vidéo au clic sur le bouton play
-3. Au clic sur le bouton pause, mettre en pause la vidéo
-4. Au clic sur le bouton stop, arrêter la video et la remettre au début
-5. Au fur et à mesure de l'avancée de la lecture mettre à jour la position du `<input type="range">`
+2. Au clic sur le lien `<a href="#">Play</a>` contenu dans la section `<section class="banner">`, ajouter la classe css "visible" à la balise qu'on vient d'ajouter `<div class="player">...</div>`
+3. Utiliser l'api HTML5 de la balise video pour permettre de lancer la vidéo au clic sur le bouton play
+4. Au clic sur le bouton pause, mettre en pause la vidéo
+5. Au clic sur le bouton stop, arrêter la video et la remettre au début
+6. Au fur et à mesure de l'avancée de la lecture mettre à jour la position du `<input type="range">`
+
 
 ## Pour aller plus loin
 - Permettre de déplacer la tête de lecture de la vidéo lors de la manipulation du range par l'utilisateur
+- Permettre de fermer la vidéo au clic sur le bouton "close"

@@ -1,13 +1,13 @@
 # TP 2 - Environnement de debug<!-- omit in toc -->
 
 ## Sommaire <!-- omit in toc -->
-- [Objectifs](#objectifs)
-- [Préparatifs](#préparatifs)
-- [Instructions](#instructions)
-	- [1. devtools : La console](#1-devtools--la-console)
+- [Objectifs](#Objectifs)
+- [Préparatifs](#Préparatifs)
+- [Instructions](#Instructions)
+	- [1. devtools : La console](#1-devtools--La-console)
 	- [2. devtools : l'inspecteur d'éléments](#2-devtools--linspecteur-déléments)
-	- [3. devtools : l'onglet Sources](#3-devtools--longlet-sources)
-- [Pour aller plus loin](#pour-aller-plus-loin)
+	- [3. devtools : l'onglet Sources](#3-devtools--longlet-Sources)
+- [Pour aller plus loin](#Pour-aller-plus-loin)
 
 ## Objectifs
 Manipuler les outils de debug intégrés dans Chrome (Chrome Dev Tools)et découvrir quelques outils en ligne utiles.
@@ -34,7 +34,7 @@ La console sert à afficher les instructions `console.log()` mais aussi les erre
 
 La méthode `console.log()` peut recevoir plusieurs paramètres, ils seront dans ce cas affichés les un après les autres, séparés par un espace. Remplacer le `console.log(...);` du `main.js` par :
 ```js
-console.log('Welcome to ', {title:'JSTV', emoji: '📺'});
+console.log('Welcome to ', {title:'JSFLIX', emoji: '📺'});
 ```
 
 L'objet `console` est un objet global qui contient la méthode `.log()` mais aussi d'autres méthodes qui permettent d'avoir un rendu différent et de filtrer les messages. Essayez les méthodes suivantes et constatez le résultat dans la console :

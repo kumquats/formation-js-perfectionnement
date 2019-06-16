@@ -1,2 +1,2 @@
 // codez ici votre TP
-console.log( 'Welcome to JSTV ! 📺' );
+console.log( 'Welcome to JSFLIX ! 📺' );

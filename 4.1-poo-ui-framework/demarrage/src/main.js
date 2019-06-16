@@ -1,7 +1,7 @@
 import renderSlideshow, { getSlideshowImages, slideNext } from "./slideshow.js";
 
 // codez ici votre TP
-console.log( 'Welcome to ', { title: 'JSTV', emoji: '📺' } );
+console.log( 'Welcome to ', { title: 'JSFLIX', emoji: '📺' } );
 
 
 // on initialise le diaporama

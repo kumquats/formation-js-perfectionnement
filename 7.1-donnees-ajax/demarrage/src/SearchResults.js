@@ -11,17 +11,16 @@ class SearchResultRenderer extends Component {
 
 	render() {
 		const { show: { id, image, name, summary, officialSite, premiered } } = this.result;
-		return `<li>
-			<article class="searchResultRenderer">
-				${ image ? `<img src="${image.medium}" class="thumbnail" />` : ''}
-				<section class="infos">
-					<h3>${name}</h3>
-					${ premiered ? `<time datetime="${premiered}">${formatDate(premiered)}</time>` : ''}
-					${summary}
-					${ officialSite ? `<a href="${officialSite}">${officialSite}</a>` : ''}
-				</section>
-			</article>
-		</li>`
+		return `<a href="${ officialSite || '#' }" class="searchResultRenderer">
+					<header>
+						${ image ? `<img src="${image.original}" class="thumbnail" />` : '' }
+						${ summary ? `<div class="summary">${ summary }</div>` : '' }
+					</header>
+					<section class="infos">
+						<h3>${name}</h3>
+						${ premiered ? `<time datetime="${premiered}">${formatDate(premiered)}</time>` : '' }
+					</section>
+				</a>`;
 	}
 }
 
@@ -34,6 +33,6 @@ export default class SearchResults extends Component {
 	}
 
 	constructor() {
-		super( 'ul' );
+		super( 'div' );
 	}
 }

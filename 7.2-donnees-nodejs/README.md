@@ -1,17 +1,17 @@
 # TP 7.2 Échange de données - NodeJS <!-- omit in toc -->
 
 ## Sommaire <!-- omit in toc -->
-- [Objectifs](#objectifs)
-- [Préparatifs](#préparatifs)
-- [Instructions](#instructions)
-	- [1. Créer le serveur Socket.io](#1-créer-le-serveur-socketio)
-	- [2. Connecter le client JS au serveur socket.io](#2-connecter-le-client-js-au-serveur-socketio)
-	- [3. Partager les recherches des utilisateurs](#3-partager-les-recherches-des-utilisateurs)
-- [Pour aller plus loin](#pour-aller-plus-loin)
+- [Objectifs](#Objectifs)
+- [Préparatifs](#Préparatifs)
+- [Instructions](#Instructions)
+	- [1. Créer le serveur Socket.io](#1-Créer-le-serveur-Socketio)
+	- [2. Connecter le client JS au serveur socket.io](#2-Connecter-le-client-JS-au-serveur-socketio)
+	- [3. Partager les recherches des utilisateurs](#3-Partager-les-recherches-des-utilisateurs)
+- [Pour aller plus loin](#Pour-aller-plus-loin)
 
 ## Objectifs
 - Développer un serveur Node avec socket.io
-- Connecter notre application JSTV à ce serveur Node pour envoyer / recevoir des données en temps réel
+- Connecter notre application JSFLIX à ce serveur Node pour envoyer / recevoir des données en temps réel
 
 ## Préparatifs
 1. **Récupérez le contenu du dossier `demarrage` du TP** *(vous pouvez également repartir des fichiers de votre tp précédent si vous aviez terminé)*
@@ -62,7 +62,7 @@
 	});
 
 	server.listen( port, () => {
-		console.log( `l'appli JSTV est lancée sur le port ${port} !` );
+		console.log( `l'appli JSFLIX est lancée sur le port ${port} !` );
 	} );
 	```
 
@@ -71,7 +71,7 @@
 	cd /chemin/vers/demarrage
 	node launch-server.js
 	```
-	Le message `"l'appli JSTV est lancée sur le port 8080 !"` s'affiche alors dans le terminal.
+	Le message `"l'appli JSFLIX est lancée sur le port 8080 !"` s'affiche alors dans le terminal.
 
 ### 2. Connecter le client JS au serveur socket.io
 1. Dans le fichier `main.js` connectez l'appli au serveur socket.io :
@@ -116,5 +116,5 @@ Maintenant, dès qu'un fichier du dossier `server` sera modifié, le serveur ser
 ## Pour aller plus loin
 - Conservez l'historique des recherches et l'envoyer à chaque nouvel utilisateur qui se connecte
 - Permettre à un utilisateur de lancer une recherche en cliquant sur un des éléments de l'historique
-- Utilisez express pour rendre la page index.html à la place du serveur PHP
+- Utilisez express pour rendre la page index.html à la place du serveur PHP (vous pouvez alors configurer le serveur node pour utiliser le port 80 !)
 - pré-rendre le slideshow dans le code html avant de l'envoyer au navigateur
