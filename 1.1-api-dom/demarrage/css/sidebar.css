@@ -44,6 +44,15 @@
 	display: none;
 }
 
+@media (max-width: 1190px){
+	.sidebar {
+		width: 240px;
+		padding: 20px;
+	}
+	.slideshow a img {
+		height: 120px;
+	}
+}
 
 .liveSearch ul {
 	list-style-type: none;

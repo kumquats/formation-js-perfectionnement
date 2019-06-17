@@ -35,7 +35,7 @@ export default class Player {
 			event.preventDefault();
 			this.stop();
 		} );
-		this.#range.change( event => this.seek( this.#range.val() ) );
+		this.#range.on( 'input', event => this.seek( this.#range.val() ) );
 		this.#closeButton.click( event => {
 			this.hide();
 		});
