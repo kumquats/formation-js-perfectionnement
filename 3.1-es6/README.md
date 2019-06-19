@@ -69,11 +69,11 @@ Tapez dans un terminal les instructions suivantes :
 	```
 	Cette commande va créer un dossier `public/build` dans lequel sera placé le fichier main.js compilé !
 
-	Vérifiez que le fichier public/build/main.js est bien compilé et qu'il ne reste plus de traces de code ES6 (const, let, ...). Si ce n'est pas le cas, c'est que le .babelrc est mal configuré ou que vous avez raté une étape !
+	Vérifiez que le fichier public/build/main.js est bien généré.
 
-8. **Une fois le fichier `public/build/main.js` créé, modifiez le fichier index.html pour charger ce fichier à la place du `main.js`. Rechargez la page pour vérifier que tout fonctionne toujours correctement !**
+7. **Une fois le fichier `public/build/main.js` créé, modifiez le fichier index.html pour charger ce fichier à la place du `main.js`. Rechargez la page pour vérifier que tout fonctionne toujours correctement !**
 
-9. **Pour simplifier le travail et éviter d'avoir à compiler manuellement à chaque modification**, utilisez la commande suivante qui va tourner en tâche de fond et recompiler à chaque sauvegarde du fichier js/main.js :
+8. **Pour simplifier le travail et éviter d'avoir à compiler manuellement à chaque modification**, utilisez la commande suivante qui va tourner en tâche de fond et recompiler à chaque sauvegarde du fichier js/main.js :
 	```bash
 	./node_modules/.bin/babel src -d public/build --verbose --watch --source-maps
 	```
@@ -82,7 +82,7 @@ A chaque étape vérifiez que tout fonctionne toujours dans le navigateur.
 
 Gardez un oeil sur le terminal dans lequel s'exécute babel, les erreurs de compilation apparaîtront là !
 
-1. Dans le fichier `src/main.js` (*attention à ne pas travailler sur le fichier compilé dans `build` !*) remplacer tous les `var` par des `const` (oud es `let si impossible`.
+1. Dans le fichier `src/main.js` (*attention à ne pas travailler sur le fichier compilé dans `build` !*) remplacer tous les `var` par des `const` (ou des `let si impossible`.
 2. Remplacer les fonctions anonymes par des arrow fonctions.
 3. Remplacer les concaténations de chaînes par des template strings.
 3. Utiliser le destructuring là où c'est possible.

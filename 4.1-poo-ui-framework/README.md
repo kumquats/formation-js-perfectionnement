@@ -138,7 +138,7 @@ A chaque étape du TP vous allez perfectionner la classe Component pour la rendr
 	<div>
 		<a href="http://www.hbo.com/game-of-thrones" class="searchResultRenderer">
 			<header>
-				<img src="" class="thumbnail" />
+				<img src="http://static.tvmaze.com/uploads/images/original_untouched/190/476117.jpg" class="thumbnail" />
 			</header>
 			<section class="infos">
 				<h3>Game Of Thrones</h3>
@@ -147,7 +147,7 @@ A chaque étape du TP vous allez perfectionner la classe Component pour la rendr
 		</a>
 		<a href="http://www.amc.com/shows/the-walking-dead" class="searchResultRenderer">
 			<header>
-				<img src="" class="thumbnail" />
+				<img src="http://static.tvmaze.com/uploads/images/original_untouched/177/444593.jpg" class="thumbnail" />
 			</header>
 			<section class="infos">
 				<h3>The Walking Dead</h3>
@@ -156,7 +156,7 @@ A chaque étape du TP vous allez perfectionner la classe Component pour la rendr
 		</a>
 		<a href="http://www.hbo.com/true-detective" class="searchResultRenderer">
 			<header>
-				<img src="" class="thumbnail" />
+				<img src="http://static.tvmaze.com/uploads/images/original_untouched/178/445621.jpg" class="thumbnail" />
 			</header>
 			<section class="infos">
 				<h3>True Detective</h3>
