@@ -17,7 +17,7 @@ class SearchResultRenderer extends Component {
 					</header>
 					<section class="infos">
 						<h3>${name}</h3>
-						${ premiered ? `<time datetime="${premiered}">${formatDate(premiered)}</time>` : '' }
+						${ premiered ? `<time datetime="${premiered}">${premiered}</time>` : '' }
 					</section>
 				</a>`;
 	}
